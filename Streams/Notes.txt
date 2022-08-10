@@ -1,0 +1,9 @@
+1) Introduced in Java 8.
+
+2) There are two types of stream operations, intermediate(eg: map(), filter(), sorted) and terminal(eg: forEach(), collect()).
+
+3) Intermediate operations return another stream, hence they can be chained.
+
+4) Terminal operations should come as the last operation.
+
+5) Stream operations do not change/mutate the original list.
