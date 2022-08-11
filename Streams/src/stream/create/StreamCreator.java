@@ -1,8 +1,10 @@
 package stream.create;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class StreamCreator {
@@ -25,6 +27,14 @@ public class StreamCreator {
         shoppingList.add("milk");
         shoppingList.add("pasta");
         Stream<String> shoppingListStream = shoppingList.stream();
+
+        // 4) Calling stream() method on EntrySet on a Map
+        Map<Integer, String> map = new HashMap<>();
+        map.put(3, "bat");
+        map.put(5, "hello");
+        map.put(6, "world!");
+        Stream<Map.Entry<Integer, String>> stream = map.entrySet().stream();
+
 
 
     }

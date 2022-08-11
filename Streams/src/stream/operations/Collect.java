@@ -1,19 +1,19 @@
 package stream.operations;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Collect {
 
     private static String[] words = {"hello", "world", "functional", "programming", "is",  "cool", "hello", "world"};
-    static List<String> wordList = Arrays.asList(words);
+    private static List<String> wordList = Arrays.asList(words);
+    private static Set<String> wordSet = new HashSet<>(wordList);
 
     public static void main(String[] args) {
         toList();
         toSet();
+        toMap();
         toJoinedString();
         wordsGreaerThanFiveCharacters();
         groupingBy();
@@ -24,13 +24,21 @@ public class Collect {
 
     static void toList() {
         List<String> duplicateWordList = wordList.stream().collect(Collectors.toList());
-        System.out.println(duplicateWordList);
+        System.out.println("toList : " + duplicateWordList);
     }
 
     static void toSet() {
         Set<String> wordSet = wordList.stream().collect(Collectors.toSet());
-        System.out.println(wordSet);
+        System.out.println("toSet : " + wordSet);
 
+    }
+
+    private static void toMap() {
+        Function<String, String> keyFunction = (word) -> word.toUpperCase();
+        Function<String, Integer> valueFunction = (word) -> word.length();
+        Map<String, Integer> upperCaseToLengthMap = wordSet.stream()
+                                                        .collect(Collectors.toMap(keyFunction, valueFunction));
+        System.out.println("toMap : " + upperCaseToLengthMap);
     }
 
     private static void toJoinedString() {

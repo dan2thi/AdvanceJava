@@ -1,5 +1,9 @@
 package stream.exercises.ex1;
 
+import stream.exercises.Car;
+import stream.exercises.Employee;
+import stream.exercises.Person;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,6 +19,7 @@ public class Main {
 
         // 3) Find the sum of all of the employees' salaries
             getSumOfSalaries();
+
     }
 
     private static void getAllPeopleNames() {

@@ -1,13 +1,13 @@
-package stream.exercises.ex1;
+package stream.exercises;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Car {
 
-    String make;
-    String color;
-    Float price;
+   public String make;
+   public String color;
+   public Float price;
 
     public Car(String make, String color, Float price) {
         this.make = make;
@@ -15,7 +15,7 @@ public class Car {
         this.price = price;
     }
 
-    static List<Car> getCarList() {
+    public static List<Car> getCarList() {
         Car[] cars = {
                 new Car("Chevy", "red", 45000f),
                 new Car("Ford", "blue", 23000f),
